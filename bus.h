@@ -1,4 +1,3 @@
-#include <iostream>
 #pragma once
 
 struct bus {
@@ -14,10 +13,22 @@ struct bus {
 		int width_of_tire; // Ширина шины (В мм)
 	} wheels;
 	struct driver {
-		std::string name; // Имя
-		std::string surname; // Фамилия
-		std::string phone_number; // Номер телефона
+		char name[20]; // Имя
+		char surname[30]; // Фамилия
+		char phone_number[12]; // Номер телефона
 	} driver;
 	int price; // Цена проезда (Руб)
 	int sum; // Сумма заработанных денег
 };
+
+int add_passenger(bus& object);
+int remove_passenger(bus& object);
+void init_bus(bus& object);
+void input_bus(bus& object);
+void input_engine(bus& object);
+void input_wheels(bus& object);
+void input_driver(bus& object);
+void print_bus(bus& object);
+void print_engine(bus& object);
+void print_wheels(bus& object);
+void print_driver(bus& object);
