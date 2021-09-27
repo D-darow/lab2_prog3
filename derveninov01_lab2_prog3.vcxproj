@@ -139,7 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="bus.cpp" />
     <ClCompile Include="derveninov01_lab2_prog3.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bus.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
