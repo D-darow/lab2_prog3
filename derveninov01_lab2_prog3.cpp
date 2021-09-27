@@ -11,7 +11,6 @@ int main()
 	SetConsoleOutputCP(1251);
     bus new_bus;
     init_bus(new_bus);
-	new_bus.price = 25;
     while (1) {
 		system("cls");
 		printf("Меню:\n");
