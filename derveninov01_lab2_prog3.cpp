@@ -1,11 +1,14 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <locale.h>
+#include <Windows.h>
 #include "bus.h"
 
 int main()
 {
     setlocale(LC_ALL, "Russian");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
     bus new_bus;
     init_bus(new_bus);
 	new_bus.price = 25;
