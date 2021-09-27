@@ -21,14 +21,14 @@ struct bus {
 	int sum; // Сумма заработанных денег
 };
 
-int add_passenger(bus& object);
-int remove_passenger(bus& object);
-void init_bus(bus& object);
-void input_bus(bus& object);
-void input_engine(bus& object);
-void input_wheels(bus& object);
-void input_driver(bus& object);
-void print_bus(bus& object);
-void print_engine(bus& object);
-void print_wheels(bus& object);
-void print_driver(bus& object);
+int add_passenger(bus& object); // Добавить пассажира
+int remove_passenger(bus& object); // Убрать пассажира
+void init_bus(bus& object); // Инициализация структуры
+void input_bus(bus& object); // Ввод цены проезда и номера автобуса
+void input_engine(bus& object); // Ввод информации о двигателе
+void input_wheels(bus& object); // Ввод информации о колесах
+void input_driver(bus& object); // Ввод информации о водителе
+void print_bus(bus& object); // Вывод номера, цены, суммы и занятых мест
+void print_engine(bus& object); // Вывод информации о двигателе
+void print_wheels(bus& object); // Вывод информации о колесах
+void print_driver(bus& object); // Вывод информации о водителе
