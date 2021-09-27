@@ -2,35 +2,43 @@
 #include <iostream>
 #include <conio.h>
 #include "bus.h"
-
-int add_passenger(bus& object)
+// Добавить пассажира
+int add_passenger(bus& object) 
 {
 	if (object.num_of_seats < 32) {
 		object.num_of_seats += 1;
 		object.sum += object.price;
-		printf("Пассажир успешно зашел в автобус и оплатил проезд.\nСвободных мест осталось: %d\n", 32 - object.num_of_seats);
+		printf("\nПассажир успешно зашел в автобус и оплатил проезд.\nСвободных мест осталось: %d\n\n", 32 - object.num_of_seats);
 	}
 	else {
-		printf("Пассажир не смог занять место. Автобус переолнен.\n");
+		printf("\nПассажир не смог занять место. Автобус переолнен.\n\n");
+		printf("Нажмите любую клавишу, чтобы вернуться в меню...");
+		_getch();
 		return -1;
 	}
+	printf("Нажмите любую клавишу, чтобы вернуться в меню...");
+	_getch();
 	return 0;
 }
-
-int remove_passenger(bus& object)
+// Убрать пассажира
+int remove_passenger(bus& object) 
 {
 	if (object.num_of_seats > 0) {
 		object.num_of_seats -= 1;
-		printf("Пассажир успешно покинул автобус.\nСвободных мест осталось: %d\n", 32 - object.num_of_seats);
+		printf("\nПассажир успешно покинул автобус.\nСвободных мест осталось: %d\n\n", 32 - object.num_of_seats);
 	}
 	else {
-		printf("Ошибка. Автобус пуст.\n");
+		printf("\nОшибка. Автобус пуст.\n\n");
+		printf("Нажмите любую клавишу, чтобы вернуться в меню...");
+		_getch();
 		return -1;
 	}
+	printf("Нажмите любую клавишу, чтобы вернуться в меню...");
+	_getch();
 	return 0;
 }
-
-void init_bus(bus& object)
+// Инициализация структуры
+void init_bus(bus& object) 
 {
 	object.bus_num = 0;
 	object.num_of_seats = 0;
@@ -45,7 +53,7 @@ void init_bus(bus& object)
 	object.driver.phone_number[0] = '\0';
 	object.price = 0;
 }
-
+// Ввод цены проезда и номера автобуса
 void input_bus(bus& object) 
 {
 	int flag = 0;
@@ -69,7 +77,7 @@ void input_bus(bus& object)
 		flag = 1;
 	} while (object.price < 0);
 }
-
+// Ввод информации о двигателе
 void input_engine(bus& object) 
 {
 	int flag = 0;
@@ -103,7 +111,7 @@ void input_engine(bus& object)
 		flag = 1;
 	} while (object.engine.num_of_cylinders < 2 || object.engine.num_of_cylinders > 16);
 }
-
+// Ввод информации о колесах
 void input_wheels(bus& object) 
 {
 	int flag = 0;
@@ -127,7 +135,7 @@ void input_wheels(bus& object)
 		flag = 1;
 	} while (object.wheels.width_of_tire < 0);
 }
-
+// Ввод информации о водителе
 void input_driver(bus& object) 
 {
 	printf("Введите имя водителя: ");
@@ -140,17 +148,17 @@ void input_driver(bus& object)
 	scanf("%s", object.driver.phone_number);
 	while (getchar() != '\n');
 }
-
+// Вывод номера, цены, суммы и занятых мест
 void print_bus(bus& object) 
 {
 	printf("\nНомер автобуса: %d\n", object.bus_num);
-	printf("Занятые места: %d\n", object.num_of_seats);
+	printf("Занятые места: %d из 32\n", object.num_of_seats);
 	printf("Цена проезда: %d\n", object.price);
 	printf("Сумма заработанных денег: %d\n\n", object.sum);
 	printf("Нажмите любую клавишу, чтобы вернуться в меню...");
 	_getch();
 }
-
+// Вывод информации о двигателе
 void print_engine(bus& object)
 {
 	printf("\nИнформация о двигателе\n");
@@ -166,7 +174,7 @@ void print_engine(bus& object)
 	printf("Нажмите любую клавишу, чтобы вернуться в меню...");
 	_getch();
 }
-
+// Вывод информации о колесах
 void print_wheels(bus& object)
 {
 	printf("\nИнформация о колесах\n");
@@ -175,13 +183,13 @@ void print_wheels(bus& object)
 	printf("Нажмите любую клавишу, чтобы вернуться в меню...");
 	_getch();
 }
-
+// Вывод информации о водителе
 void print_driver(bus& object)
 {
 	printf("\nИнформация о водителе\n");
 	printf("Имя: %s\n", object.driver.name);
 	printf("Фамилия: %s\n", object.driver.surname);
-	printf("Номер телефона: %s\n", object.driver.phone_number);
+	printf("Номер телефона: %s\n\n", object.driver.phone_number);
 	printf("Нажмите любую клавишу, чтобы вернуться в меню...");
 	_getch();
 }
