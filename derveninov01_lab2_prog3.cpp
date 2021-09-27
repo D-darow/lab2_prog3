@@ -22,7 +22,8 @@ int main()
 		printf("8. Вывод информации о двигателе\n");
 		printf("9. Вывод информации о колесах\n");
 		printf("10. Вывод информации о водителе\n");
-		printf("11. Выход из программы\n\n");
+		printf("11. Обнулить сумму\n");
+		printf("12. Выход из программы\n\n");
         int choice = 0;
 		int flag = 0;
 		do {
@@ -33,7 +34,7 @@ int main()
 				printf("Ошибка. Выберите пункт меню: ");
 			}
 			flag = 1;
-		} while (choice < 1 || choice > 11);
+		} while (choice < 1 || choice > 12);
 		switch (choice) {
 		case 1:
 			add_passenger(new_bus);
@@ -66,6 +67,9 @@ int main()
 			print_driver(new_bus);
 			break;
 		case 11:
+			new_bus.sum = 0;
+			break;
+		case 12: 
 			return 0;
 		}
     }
