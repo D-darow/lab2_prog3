@@ -48,25 +48,25 @@ int main()
 			input_bus(new_bus);
 			break;
 		case 4:
-			input_engine(new_bus);
+			input_engine(new_bus.bus_engine);
 			break;
 		case 5:
-			input_wheels(new_bus);
+			input_wheels(new_bus.bus_wheels);
 			break;
 		case 6:
-			input_driver(new_bus);
+			input_driver(new_bus.bus_driver);
 			break;
 		case 7:
 			print_bus(new_bus);
 			break;
 		case 8: 
-			print_engine(new_bus);
+			print_engine(new_bus.bus_engine);
 			break;
 		case 9:
-			print_wheels(new_bus);
+			print_wheels(new_bus.bus_wheels);
 			break;
 		case 10:
-			print_driver(new_bus);
+			print_driver(new_bus.bus_driver);
 			break;
 		case 11:
 			new_bus.sum = 0;

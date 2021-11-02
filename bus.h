@@ -1,22 +1,13 @@
 #pragma once
-
+#include "engine.h"
+#include "wheels.h"
+#include "driver.h"
 struct bus {
 	int bus_num; // Номер автобуса
 	int num_of_seats; // Занятые места (max 32)
-	struct engine {
-		int hs_power; // Лошадиные силы
-		int fuel; // Род топлива
-		int num_of_cylinders; // Количество цилиндров (от 2 до 16)
-	} engine;
-	struct wheels {
-		int diameter_of_disk; // Диаметр колеса (В дюймах)
-		int width_of_tire; // Ширина шины (В мм)
-	} wheels;
-	struct driver {
-		char name[20]; // Имя
-		char surname[30]; // Фамилия
-		char phone_number[12]; // Номер телефона
-	} driver;
+	engine bus_engine;
+	wheels bus_wheels;
+	driver bus_driver;
 	int price; // Цена проезда (Руб)
 	int sum; // Сумма заработанных денег
 };
@@ -25,10 +16,4 @@ int add_passenger(bus& object); // Добавить пассажира
 int remove_passenger(bus& object); // Убрать пассажира
 void init_bus(bus& object); // Инициализация структуры
 void input_bus(bus& object); // Ввод цены проезда и номера автобуса
-void input_engine(bus& object); // Ввод информации о двигателе
-void input_wheels(bus& object); // Ввод информации о колесах
-void input_driver(bus& object); // Ввод информации о водителе
-void print_bus(bus& object); // Вывод номера, цены, суммы и занятых мест
-void print_engine(bus& object); // Вывод информации о двигателе
-void print_wheels(bus& object); // Вывод информации о колесах
-void print_driver(bus& object); // Вывод информации о водителе
+void print_bus(bus object); // Вывод номера, цены, суммы и занятых мест

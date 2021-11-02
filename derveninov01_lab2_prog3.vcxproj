@@ -141,9 +141,15 @@
   <ItemGroup>
     <ClCompile Include="bus.cpp" />
     <ClCompile Include="derveninov01_lab2_prog3.cpp" />
+    <ClCompile Include="driver.cpp" />
+    <ClCompile Include="engine.cpp" />
+    <ClCompile Include="wheels.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bus.h" />
+    <ClInclude Include="driver.h" />
+    <ClInclude Include="engine.h" />
+    <ClInclude Include="wheels.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
